@@ -6,9 +6,9 @@ import Features from './components/Features'
 import WhatWeHandle from './components/WhatWeHandle'
 import HearIt from './components/HearIt'
 import HowItWorks from './components/HowItWorks'
+import GettingStarted from './components/GettingStarted'
 import Integrations from './components/Integrations'
 import Pricing from './components/Pricing'
-import GettingStarted from './components/GettingStarted'
 import Team from './components/Team'
 import Contact from './components/Contact'
 import FinalCTA from './components/FinalCTA'
@@ -27,9 +27,9 @@ export default function App() {
         <WhatWeHandle />
         <HearIt />
         <HowItWorks />
+        <GettingStarted />
         <Integrations />
         <Pricing />
-        <GettingStarted />
         <Team />
         <Contact />
         <FinalCTA />

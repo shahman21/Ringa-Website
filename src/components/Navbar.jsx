@@ -3,15 +3,23 @@ import { useState, useEffect } from 'react'
 const CALENDLY = 'https://calendly.com/aditya-shah-ringa/ringa-sales-call'
 
 const links = [
-  { label: 'What We Handle', href: '#what-we-handle' },
-  { label: 'Hear It', href: '#demo' },
-  { label: 'Integrations', href: '#integrations' },
-  { label: 'Pricing', href: '#pricing' },
+  { label: 'What We Build', href: '#what-we-build' },
+  { label: 'Examples',      href: '#examples' },
+  { label: 'How It Works',  href: '#how-it-works' },
+  { label: 'Pricing',       href: '#pricing' },
 ]
 
 function scrollTo(href) {
   const el = document.querySelector(href)
   if (el) el.scrollIntoView({ behavior: 'smooth' })
+}
+
+function LdaMark({ className = 'w-9 h-9' }) {
+  return (
+    <span className={`${className} rounded-lg bg-[#1d4ed8] text-white font-heading font-extrabold text-[11px] tracking-widest flex items-center justify-center`}>
+      LDA
+    </span>
+  )
 }
 
 export default function Navbar() {
@@ -34,8 +42,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-[#e5e8ed] shadow-sm'
-          : 'bg-white border-b border-[#e5e8ed]'
+          ? 'bg-white/95 backdrop-blur-md border-b border-[#e5e7eb] shadow-sm'
+          : 'bg-white border-b border-[#e5e7eb]'
       }`}
     >
       <div className="container-wide">
@@ -43,9 +51,10 @@ export default function Navbar() {
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="font-heading font-extrabold text-2xl text-[#3b82c4] tracking-tight select-none flex items-center gap-2"
+            className="font-heading font-extrabold text-xl text-[#1f2937] tracking-tight select-none flex items-center gap-2.5"
           >
-            🦷 Ringa
+            <LdaMark className="w-9 h-9" />
+            <span>LDA <span className="text-[#525252] font-bold">Digital</span></span>
           </button>
 
           {/* Desktop links */}
@@ -55,7 +64,7 @@ export default function Navbar() {
                 key={l.label}
                 href={l.href}
                 onClick={(e) => handleNav(e, l.href)}
-                className="text-[#6b7280] hover:text-[#1f2937] text-sm font-medium transition-colors duration-200"
+                className="text-[#525252] hover:text-[#1f2937] text-sm font-medium transition-colors duration-200"
               >
                 {l.label}
               </a>
@@ -70,7 +79,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="btn-primary rounded-full px-5"
             >
-              Book a Discovery Call
+              Get a Free Mockup
             </a>
           </div>
 
@@ -91,7 +100,7 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 bg-white border-b border-[#e5e8ed] ${
+        className={`md:hidden overflow-hidden transition-all duration-300 bg-white border-b border-[#e5e7eb] ${
           open ? 'max-h-72' : 'max-h-0'
         }`}
       >
@@ -101,7 +110,7 @@ export default function Navbar() {
               key={l.label}
               href={l.href}
               onClick={(e) => handleNav(e, l.href)}
-              className="text-[#6b7280] hover:text-[#1f2937] text-sm font-medium py-1.5 transition-colors"
+              className="text-[#525252] hover:text-[#1f2937] text-sm font-medium py-1.5 transition-colors"
             >
               {l.label}
             </a>
@@ -112,7 +121,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="btn-primary rounded-full self-start mt-2"
           >
-            Book a Discovery Call
+            Get a Free Mockup
           </a>
         </div>
       </div>

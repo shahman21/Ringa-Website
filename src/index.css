@@ -7,7 +7,7 @@
   html { scroll-behavior: smooth; }
   body {
     background-color: #ffffff;
-    color: #6b7280;
+    color: #525252;
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -16,25 +16,36 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 bg-[#3b82c4] text-white font-semibold px-5 py-2.5 rounded-btn hover:bg-[#1e5fa8] active:bg-[#1a4f8e] transition-all duration-200 cursor-pointer text-sm;
+    @apply inline-flex items-center justify-center gap-2 bg-[#1d4ed8] text-white font-semibold px-5 py-2.5 rounded-btn hover:bg-[#1e40af] active:bg-[#172554] transition-all duration-200 cursor-pointer text-sm;
   }
-  .btn-outline-teal {
-    @apply inline-flex items-center justify-center gap-2 border border-[#3b82c4] text-[#3b82c4] font-semibold px-5 py-2.5 rounded-btn hover:bg-[#e8f4fd] active:bg-[#d0e8f8] transition-all duration-200 cursor-pointer text-sm;
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-[#1d4ed8] text-[#1d4ed8] font-semibold px-5 py-2.5 rounded-btn hover:bg-[#eff6ff] active:bg-[#dbeafe] transition-all duration-200 cursor-pointer text-sm;
+  }
+  .btn-outline-dark {
+    @apply inline-flex items-center justify-center gap-2 border border-[#0f172a] text-[#0f172a] font-semibold px-5 py-2.5 rounded-btn hover:bg-[#0f172a] hover:text-white transition-all duration-200 cursor-pointer text-sm;
   }
   .btn-outline-white {
-    @apply inline-flex items-center justify-center gap-2 border border-[#e5e8ed] text-[#1f2937] font-semibold px-5 py-2.5 rounded-btn hover:border-[#3b82c4] hover:bg-[#e8f4fd] transition-all duration-200 cursor-pointer text-sm;
+    @apply inline-flex items-center justify-center gap-2 border border-[#e5e7eb] text-[#0f172a] font-semibold px-5 py-2.5 rounded-btn hover:border-[#1d4ed8] hover:bg-[#eff6ff] transition-all duration-200 cursor-pointer text-sm;
   }
   .card {
-    @apply bg-white border border-[#e5e8ed] rounded-card shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300;
+    @apply bg-white border border-[#e5e7eb] rounded-card shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300;
   }
-  .card-dark {
-    @apply bg-[#f7f9fc] border border-[#e5e8ed] rounded-card shadow-card;
+  .card-flat {
+    @apply bg-white border border-[#e5e7eb] rounded-card;
+  }
+  .card-tint {
+    @apply bg-[#f8fafc] border border-[#e5e7eb] rounded-card;
   }
   .section-pad {
     @apply py-24 md:py-32;
   }
   .container-wide {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Eyebrow/section label */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[#1d4ed8] text-xs font-bold uppercase tracking-[0.18em];
   }
 
   /* Fade-in animation triggered by JS */
@@ -46,42 +57,46 @@
   }
 }
 
-/* Grid overlay */
+/* Blueprint grid overlay — fine 24/72px lattice on a paper-blue tint */
 .grid-overlay {
   background-image:
-    linear-gradient(rgba(59,130,196,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59,130,196,0.04) 1px, transparent 1px);
-  background-size: 72px 72px;
+    linear-gradient(rgba(29,78,216,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29,78,216,0.08) 1px, transparent 1px),
+    linear-gradient(rgba(29,78,216,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29,78,216,0.04) 1px, transparent 1px);
+  background-size: 72px 72px, 72px 72px, 24px 24px, 24px 24px;
+}
+
+/* Blueprint marker stripe — replaces the old hazard-tape accent */
+.hazard-tape {
+  background-image: repeating-linear-gradient(
+    135deg,
+    #0f172a 0,
+    #0f172a 14px,
+    #1d4ed8 14px,
+    #1d4ed8 28px
+  );
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #f7f9fc; }
-::-webkit-scrollbar-thumb { background: #3b82c4; border-radius: 999px; }
+::-webkit-scrollbar-track { background: #f8fafc; }
+::-webkit-scrollbar-thumb { background: #1d4ed8; border-radius: 999px; }
 
 /* Phone mockup */
 .phone-frame {
   width: 260px;
   height: 530px;
-  background: #f0f4f8;
+  background: #0a0a0a;
   border-radius: 44px;
-  border: 2px solid #e5e8ed;
+  border: 2px solid #0a0a0a;
   padding: 12px;
   box-shadow:
-    0 0 0 1px #e5e8ed,
-    0 24px 60px rgba(59,130,196,0.15),
-    inset 0 0 0 1px #f0f4f8;
+    0 0 0 1px #0a0a0a,
+    0 28px 60px rgba(15,23,42,0.20),
+    inset 0 0 0 1px #0a0a0a;
   position: relative;
   flex-shrink: 0;
-}
-.phone-notch {
-  width: 100px;
-  height: 28px;
-  background: #f0f4f8;
-  border-radius: 0 0 18px 18px;
-  margin: 0 auto 8px;
-  position: relative;
-  z-index: 2;
 }
 .phone-screen {
   background: #ffffff;
@@ -90,6 +105,28 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+
+/* Browser-window mockup used to show example trade websites */
+.browser-frame {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 18px 40px rgba(15,23,42,0.10);
+}
+.browser-bar {
+  background: #f8fafc;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.browser-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
 }
 
 /* Chat bubble animation */
@@ -106,6 +143,6 @@
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee 28s linear infinite;
+  animation: marquee 32s linear infinite;
 }
 .marquee-track:hover { animation-play-state: paused; }

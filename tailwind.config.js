@@ -4,28 +4,26 @@ export default {
   theme: {
     extend: {
       colors: {
-        orange: { DEFAULT: '#ff6b00', light: '#ff8c33', dark: '#cc5500' },
-        teal: { DEFAULT: '#00d4aa', light: '#33debb', dark: '#00a888' },
-        surface: { DEFAULT: '#111111', card: '#161616' },
-        border: { DEFAULT: '#222222' },
-        txt: { DEFAULT: '#f0f0f0', muted: '#777777' },
+        blueprint: { DEFAULT: '#1d4ed8', light: '#3b82f6', dark: '#1e40af', deep: '#172554', tint: '#eff6ff', wash: '#dbeafe' },
+        ink:    { DEFAULT: '#0f172a', soft: '#1f2937', muted: '#525252', faint: '#737373' },
+        line:   { DEFAULT: '#e5e7eb', soft: '#eef2f7' },
+        bg:     { DEFAULT: '#ffffff', tint: '#f8fafc', dark: '#0a0a0a' },
       },
       fontFamily: {
         heading: ['Nunito', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
       },
       borderRadius: {
-        card: '12px',
-        btn: '8px',
+        card: '14px',
+        btn: '10px',
       },
       boxShadow: {
-        card: '0 4px 24px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.3)',
-        'card-hover': '0 8px 40px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4)',
-        orange: '0 0 24px rgba(255,107,0,0.25)',
-        teal: '0 0 24px rgba(0,212,170,0.2)',
+        card: '0 1px 2px rgba(15,23,42,0.04), 0 8px 24px rgba(15,23,42,0.06)',
+        'card-hover': '0 2px 4px rgba(15,23,42,0.06), 0 18px 40px rgba(15,23,42,0.10)',
+        blueprint: '0 12px 32px rgba(29,78,216,0.28)',
       },
       animation: {
-        marquee: 'marquee 30s linear infinite',
+        marquee: 'marquee 32s linear infinite',
         'float-slow': 'floatSlow 8s ease-in-out infinite',
         'float-medium': 'floatMedium 6s ease-in-out infinite',
         'fade-up': 'fadeUp 0.6s ease forwards',

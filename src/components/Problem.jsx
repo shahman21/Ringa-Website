@@ -1,10 +1,10 @@
 import { useFadeIn } from '../hooks/useFadeIn'
 
 const stats = [
-  { value: '40%',  label: 'of dental calls go unanswered',          tag: 'Missed Patients' },
-  { value: '£150', label: 'average missed appointment value',         tag: 'Lost Revenue' },
-  { value: '£25k', label: 'in missed patient revenue per year for a typical practice', tag: 'Missed Revenue' },
-  { value: '68%',  label: "of patients won't leave a voicemail",     tag: 'Lost Forever' },
+  { value: '1 in 4', label: 'UK trades have no website at all — invisible on Google',  tag: 'Invisible'   },
+  { value: '~50%',   label: 'of trade sites take 3+ seconds to load on mobile, killing 40% of leads', tag: 'Too Slow' },
+  { value: '£5–15k', label: 'agencies charge for animated landing pages — we charge £1,000', tag: 'Overpriced' },
+  { value: '8 wks',  label: 'typical agency build time. Ours is 3 days — start to live',     tag: 'Too Slow Again' },
 ]
 
 export default function Problem() {
@@ -19,12 +19,12 @@ export default function Problem() {
           {/* Left */}
           <div>
             <div ref={textRef} className="fade-up mb-10">
-              <p className="text-[#3b82c4] text-xs font-semibold uppercase tracking-widest mb-3">The Problem</p>
+              <p className="eyebrow mb-3">The Problem</p>
               <h2 className="font-heading font-extrabold text-[clamp(2rem,5vw,3.5rem)] leading-tight text-[#1f2937] mb-5">
-                Every missed call is a patient going elsewhere.
+                You're losing jobs to trades with a better website.
               </h2>
-              <p className="text-[#6b7280] text-base leading-relaxed max-w-lg">
-                You are with a patient. The phone rings. By the time you call back, they have already booked at the practice down the road. This happens to dental practices every day.
+              <p className="text-[#525252] text-base leading-relaxed max-w-lg">
+                Somebody in your area just opened Google Maps and typed "plumber near me." They clicked the first site that loaded fast, looked the part, and let them get a quote in two taps. If that's not yours, the job is gone — to a tradesperson with worse reviews and a better website.
               </p>
             </div>
 
@@ -32,13 +32,13 @@ export default function Problem() {
               {stats.map((s) => (
                 <div
                   key={s.value}
-                  className="card-dark p-5 hover:border-[#3b82c4]/30 hover:-translate-y-0.5 transition-all duration-300"
+                  className="card-tint p-5 hover:border-[#1d4ed8]/40 hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  <p className="font-heading font-extrabold text-4xl text-[#3b82c4] leading-none mb-1">
+                  <p className="font-heading font-extrabold text-4xl text-[#1d4ed8] leading-none mb-1">
                     {s.value}
                   </p>
-                  <p className="text-[#1e5fa8] text-[10px] font-semibold uppercase tracking-widest mb-2">{s.tag}</p>
-                  <p className="text-[#6b7280] text-xs leading-snug">{s.label}</p>
+                  <p className="text-[#1f2937] text-[10px] font-bold uppercase tracking-widest mb-2">{s.tag}</p>
+                  <p className="text-[#525252] text-xs leading-snug">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -47,28 +47,27 @@ export default function Problem() {
           {/* Right — image */}
           <div ref={imgRef} className="fade-up relative">
             <div
-              className="rounded-card overflow-hidden border border-[#e5e8ed]"
-              style={{ boxShadow: '0 0 40px rgba(59,130,196,0.1), 0 24px 60px rgba(0,0,0,0.08)' }}
+              className="rounded-card overflow-hidden border border-[#e5e7eb]"
+              style={{ boxShadow: '0 0 40px rgba(29,78,216,0.10), 0 24px 60px rgba(15,23,42,0.10)' }}
             >
               <img
-                src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=800&q=80"
-                alt="Dentist with patient"
+                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80"
+                alt="Tradesperson on a job"
                 className="w-full h-80 object-cover"
-                style={{ filter: 'brightness(0.95)' }}
                 loading="lazy"
               />
               <div
                 className="absolute inset-0 rounded-card pointer-events-none"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(59,130,196,0.05) 0%, rgba(255,255,255,0.1) 100%)',
+                  background: 'linear-gradient(135deg, rgba(29,78,216,0.06) 0%, rgba(255,255,255,0.1) 100%)',
                 }}
               />
             </div>
 
             {/* Floating badge */}
-            <div className="absolute -bottom-4 -left-4 bg-white border border-[#3b82c4]/20 rounded-card p-4 shadow-[0_4px_24px_rgba(59,130,196,0.15)]">
-              <p className="text-[#3b82c4] font-heading font-extrabold text-2xl">24/7</p>
-              <p className="text-[#6b7280] text-xs mt-0.5">every patient call answered, every day of the year</p>
+            <div className="absolute -bottom-4 -left-4 bg-white border border-[#1d4ed8]/25 rounded-card p-4 shadow-[0_8px_28px_rgba(29,78,216,0.18)]">
+              <p className="text-[#1d4ed8] font-heading font-extrabold text-2xl">3 days · £1,000</p>
+              <p className="text-[#525252] text-xs mt-0.5">brief to live. Free mockup before you pay.</p>
             </div>
           </div>
         </div>

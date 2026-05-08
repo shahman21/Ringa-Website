@@ -2,25 +2,25 @@ import { useFadeIn } from '../hooks/useFadeIn'
 
 const team = [
   {
-    name: 'Adi Shah',
-    role: 'CEO & Co-Founder',
-    photo: '/IMG_9200.JPG',
-    color: '#3b82c4',
-    bio: 'Adi spent the better part of a week trying to get through to his NHS dentist with a toothache. Every call went unanswered and he eventually had to look elsewhere. That experience got him thinking about how many practices were losing patients simply because nobody could pick up the phone. He brings tech experience from Virgin Media O2 and client-facing experience from the Department for Work and Pensions, and leads product, strategy and customer experience at Ringa.',
+    name: 'Lhamo',
+    role: 'Co-founder · Client lead',
+    photo: '/lhamo.jpeg',
+    color: '#1d4ed8',
+    bio: "Lhamo runs the first conversation with every client and stays the main point of contact through the build. Background in B2B sales and account management. He's the one who'll walk you through the brief, agree the scope, and make sure nothing gets lost between you and the team.",
   },
   {
     name: 'Drew Robertson',
-    role: 'CTO & Co-Founder',
+    role: 'Co-founder · Engineering',
     photo: '/Drew.jpeg',
-    color: '#1e5fa8',
-    bio: 'Drew chipped a tooth and spent an afternoon trying to get through to a dental practice near him. Several calls, no answer. He ended up finding a walk-in clinic because it was the only option. That experience informed how he thinks about the problem Ringa is solving. Previously a software engineer at TheTradeDesk processing billions of events daily, he owns everything from the voice AI to the integrations that connect it to your existing tools.',
+    color: '#1f2937',
+    bio: "Drew handles the build — code, hosting, performance, SEO. Previously a software engineer at TheTradeDesk. He cares about the dull-but-important things: how fast a site loads on a mid-range phone, whether forms actually submit, whether Google can index the content properly.",
   },
   {
-    name: 'Lhamo',
-    role: 'Co-Founder & Head of Sales',
-    photo: '/lhamo.jpeg',
-    color: '#0ea5e9',
-    bio: 'When Lhamo\'s family moved house, his mum spent several weeks trying to register with a local NHS dentist. The calls rarely got through and the process took far longer than it should have. It stuck with him. He co-founded Ringa so practices can actually be reached by the patients who are trying to get to them. He leads all new client conversations and brings that personal understanding to every one.',
+    name: 'Adi Shah',
+    role: 'Co-founder · Design & strategy',
+    photo: '/IMG_9200.JPG',
+    color: '#1e40af',
+    bio: "Adi works on design, copy, and what each site needs to do for the trade it's built for. Previously in product roles at Virgin Media O2 and DWP. He spends most of his time turning a half-hour conversation into a site that reads like the trade who runs it.",
   },
 ]
 
@@ -29,14 +29,17 @@ export default function Team() {
   const cardsRef = useFadeIn(0.1, 100)
 
   return (
-    <section id="team" className="section-pad bg-[#f7f9fc]">
+    <section id="team" className="section-pad bg-[#f8fafc]">
       <div className="container-wide">
         <div ref={headRef} className="fade-up mb-14">
-          <p className="text-[#3b82c4] text-xs font-semibold uppercase tracking-widest mb-3">The Team</p>
+          <p className="eyebrow mb-3">The Team</p>
           <h2 className="font-heading font-extrabold text-[clamp(2rem,5vw,3.5rem)] text-[#1f2937] leading-tight">
-            Built by engineers.{' '}
-            <span className="text-[#3b82c4]">Sold by people who get it.</span>
+            Three of us.{' '}
+            <span className="text-[#1d4ed8]">No middle men.</span>
           </h2>
+          <p className="text-[#525252] text-base max-w-lg mt-4">
+            LDA is named after the three of us — Lhamo, Drew, Adi. You'll talk to one of us on the discovery call, and the same person will run your build. No account managers, no project coordinators, no chains of email.
+          </p>
         </div>
 
         <div ref={cardsRef} className="fade-up grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -47,7 +50,7 @@ export default function Team() {
               style={{ borderTopColor: m.color }}
             >
               {/* Photo */}
-              <div className="relative overflow-hidden bg-[#f7f9fc]" style={{ height: '300px' }}>
+              <div className="relative overflow-hidden bg-[#f8fafc]" style={{ height: '300px' }}>
                 <img
                   src={m.photo}
                   alt={m.name}
@@ -56,7 +59,7 @@ export default function Team() {
                 />
                 <div
                   className="absolute inset-0 pointer-events-none"
-                  style={{ background: 'linear-gradient(to top, rgba(247,249,252,0.6) 0%, transparent 50%)' }}
+                  style={{ background: 'linear-gradient(to top, rgba(250,250,249,0.6) 0%, transparent 50%)' }}
                 />
               </div>
 
@@ -69,7 +72,7 @@ export default function Team() {
                 >
                   {m.role}
                 </p>
-                <p className="text-[#6b7280] text-sm leading-relaxed">{m.bio}</p>
+                <p className="text-[#525252] text-sm leading-relaxed">{m.bio}</p>
               </div>
             </div>
           ))}
